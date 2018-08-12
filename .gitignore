@@ -4,7 +4,7 @@ bootstrap/compiled.php
 
 # Laravel 5 & Lumen specific
 public/storage
-public/hot
+#public/hot
 storage/*.key
 .env.*.php
 .env.php
@@ -41,4 +41,4 @@ nbproject
 .vagrant
 
 # 
-public/images
+#public/images
