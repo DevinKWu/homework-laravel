@@ -98,6 +98,14 @@ return [
                 'view' => '查看用戶',
             ],
         ],
+        'posts' => [
+            'table' => [
+                'post' => '消息',
+                'total' => '消息總計|消息總計',
+            ],
+            'management' => '消息管理',
+            'create' => '創建消息'
+        ],
     ],
 
     'frontend' => [

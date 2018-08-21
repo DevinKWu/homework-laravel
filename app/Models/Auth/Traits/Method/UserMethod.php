@@ -70,6 +70,13 @@ trait UserMethod
     /**
      * @return mixed
      */
+    public function canDo($p)
+    {
+        return $this->can($p)||$this->hasRole(config('access.users.admin_role'));
+    }
+    /**
+     * @return mixed
+     */
     public function isAdmin()
     {
         return $this->hasRole(config('access.users.admin_role'));

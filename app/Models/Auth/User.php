@@ -4,6 +4,7 @@ namespace App\Models\Auth;
 
 use App\Models\Traits\Uuid;
 use Spatie\Permission\Traits\HasRoles;
+use Spatie\Permission\Traits\HasPermissions;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Auth\Traits\Scope\UserScope;
 use App\Models\Auth\Traits\Method\UserMethod;
@@ -19,6 +20,7 @@ use App\Models\Auth\Traits\Relationship\UserRelationship;
 class User extends Authenticatable
 {
     use HasRoles,
+        // HasPermissions,
         Notifiable,
         SendUserPasswordReset,
         SoftDeletes,

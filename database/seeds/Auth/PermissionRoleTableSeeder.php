@@ -21,19 +21,22 @@ class PermissionRoleTableSeeder extends Seeder
         $this->disableForeignKeys();
 
         // Create Roles
-        $admin = Role::create(['name' => config('access.users.admin_role')]);
-        $executive = Role::create(['name' => 'executive']);
-        $user = Role::create(['name' => config('access.users.default_role')]);
+        foreach(config('seeder.Role') as $role){
+            Role::create($role);
+        }
 
         // Create Permissions
-        Permission::create(['name' => 'view backend']);
-
+        foreach(config('seeder.Permission') as $permission){
+            Permission::create($permission);
+        }
         // ALWAYS GIVE ADMIN ROLE ALL PERMISSIONS
-        $admin->givePermissionTo('view backend');
+        Role::where('name',config('access.users.admin_role'))->first()
+            ->givePermissionTo('view backend');
 
         // Assign Permissions to other Roles
-        $executive->givePermissionTo('view backend');
-
+        // Role::where('name','executive')->first()
+        //     ->givePermissionTo('view backend');
+        
         $this->enableForeignKeys();
     }
 }

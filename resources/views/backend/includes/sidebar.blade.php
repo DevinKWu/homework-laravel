@@ -13,6 +13,59 @@
                 {{ __('menus.backend.sidebar.system') }}
             </li>
 
+            @if ($logged_in_user->canDo(['manage post']))
+                <li class="nav-item nav-dropdown {{ active_class(Active::checkUriPattern('admin/post*'), 'open') }}">
+                    <a class="nav-link nav-dropdown-toggle" href="#">
+                        <i class="icon-docs"></i> {{ __('models.post.menus.title') }}
+
+                        @if ($pending_approval > 0)
+                            <span class="badge badge-danger">{{ $pending_approval }}</span>
+                        @endif
+                    </a>
+
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link {{ active_class(Active::checkUriPattern('admin/post*')) }}" href="{{ route('admin.post.index') }}">
+                                {{ __('models.post.management') }}
+
+                                @if ($pending_approval > 0)
+                                    <span class="badge badge-danger">{{ $pending_approval }}</span>
+                                @endif
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ active_class(Active::checkUriPattern('admin/post_category*')) }}" href="{{ route('admin.post_category.index') }}">
+                                {{ __('models.post_category.management') }}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            @endif
+
+            @if ($logged_in_user->canDo(['manage page']))
+                <li class="nav-item nav-dropdown {{ active_class(Active::checkUriPattern('admin/page*'), 'open') }}">
+                    <a class="nav-link nav-dropdown-toggle" href="#">
+                        <i class="icon-docs"></i> {{ __('models.page.menus.title') }}
+
+                        @if ($pending_approval > 0)
+                            <span class="badge badge-danger">{{ $pending_approval }}</span>
+                        @endif
+                    </a>
+
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link {{ active_class(Active::checkUriPattern('admin/page*')) }}" href="{{ route('admin.page.index') }}">
+                                {{ __('models.page.management') }}
+
+                                @if ($pending_approval > 0)
+                                    <span class="badge badge-danger">{{ $pending_approval }}</span>
+                                @endif
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            @endif
+
             @if ($logged_in_user->isAdmin())
                 <li class="nav-item nav-dropdown {{ active_class(Active::checkUriPattern('admin/auth*'), 'open') }}">
                     <a class="nav-link nav-dropdown-toggle" href="#">
@@ -41,7 +94,7 @@
                     </ul>
                 </li>
             @endif
-
+            @if($logged_in_user->canDo(['view log-viewer']))
             <li class="nav-item nav-dropdown {{ active_class(Active::checkUriPattern('admin/log-viewer*'), 'open') }}">
                 <a class="nav-link nav-dropdown-toggle" href="#">
                     <i class="icon-list"></i> {{ __('menus.backend.log-viewer.main') }}
@@ -60,6 +113,7 @@
                     </li>
                 </ul>
             </li>
+            @endif
         </ul>
     </nav>
 </div><!--sidebar-->

@@ -48,6 +48,12 @@ return [
             'general' => 'General',
             'system' => 'System',
         ],
+
+        'post' => [
+            'main' => '消息',
+            'create' => '創建',
+            'edit' => '編輯',
+        ],
     ],
 
     'language-picker' => [

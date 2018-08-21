@@ -24,7 +24,7 @@
     </ul>
 
     <ul class="nav navbar-nav ml-auto">
-        <li class="nav-item d-md-down-none">
+        {{-- <li class="nav-item d-md-down-none">
             <a class="nav-link" href="#"><i class="icon-bell"></i><span class="badge badge-pill badge-info">0</span></a>
         </li>
         <li class="nav-item d-md-down-none">
@@ -32,7 +32,7 @@
         </li>
         <li class="nav-item d-md-down-none">
             <a class="nav-link" href="#"><i class="icon-location-pin"></i></a>
-        </li>
+        </li> --}}
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <img src="{{ $logged_in_user->picture }}" class="img-avatar" alt="{{ $logged_in_user->email }}">
@@ -40,21 +40,21 @@
             </a>
 
             <div class="dropdown-menu dropdown-menu-right">
-                <div class="dropdown-header text-center">
+                {{-- <div class="dropdown-header text-center">
                     <strong>Heading</strong>
-                </div>
-                <a class="dropdown-item" href="#"><i class="fa fa-bell-o"></i> Link<span class="badge badge-info">0</span></a>
-                <a class="dropdown-item" href="#"><i class="fa fa-envelope-o"></i> Link</a>
+                </div> --}}
+                {{-- <a class="dropdown-item" href="#"><i class="fa fa-bell-o"></i> Link<span class="badge badge-info">0</span></a> --}}
+                {{-- <a class="dropdown-item" href="#"><i class="fa fa-envelope-o"></i> Link</a> --}}
 
-                <div class="dropdown-header text-center">
+                {{-- <div class="dropdown-header text-center">
                     <strong>Heading</strong>
-                </div>
-                <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> Link</a>
-                <a class="dropdown-item" href="#"><i class="fa fa-file"></i> Link<span class="badge badge-primary">0</span></a>
+                </div> --}}
+                {{-- <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> Link</a> --}}
+                {{-- <a class="dropdown-item" href="#"><i class="fa fa-file"></i> Link<span class="badge badge-primary">0</span></a> --}}
                 <a class="dropdown-item" href="{{ route('frontend.auth.logout') }}"><i class="fa fa-lock"></i> {{ __('navs.general.logout') }}</a>
             </div>
         </li>
     </ul>
 
-    <button class="navbar-toggler aside-menu-toggler" type="button">☰</button>
+    {{-- <button class="navbar-toggler aside-menu-toggler" type="button">☰</button> --}}
 </header>

@@ -153,6 +153,9 @@ return [
                     'send_confirmation_email' => 'Send Confirmation E-mail',
                 ],
             ],
+            'posts' => [
+                'name' => '名稱',
+            ],
         ],
 
         'frontend' => [
